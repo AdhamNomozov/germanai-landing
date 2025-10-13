@@ -1,29 +1,25 @@
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}"
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        brand: {
-          black: "#000000",
-          white: "#FFFFFF",
-          yellow: "#FFCC00",
-          red: "#D40000"
-        }
+        brand: { black: "#000000", white: "#FFFFFF", yellow: "#FFCC00", red: "#D40000" }
       },
       fontFamily: {
         display: ["Poppins", "var(--font-poppins)", "sans-serif"],
         sans: ["Inter", "var(--font-inter)", "sans-serif"]
       }
-    }
+    },
   },
-  plugins: []
+  plugins: [],
 };
 
 export default config;
-export { };
+export {};
