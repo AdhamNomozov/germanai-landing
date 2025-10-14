@@ -1,35 +1,42 @@
+// src/lib/data.ts
+
+// 💡 Asosiy yo'nalishlar (3 ta blok)
 export const directions = [
   {
+    icon: "🧠",
     title: "AI Mock Exam",
     description:
-      "Nemis tilidan onlayn sinov – real imtihon formatida adaptiv savollar va darhol tahlil."
+      "Nemis tilidan onlayn sinov – real imtihon formatida adaptiv savollar va AI tahlil."
   },
   {
+    icon: "🎯",
     title: "AI Kurslar",
     description:
-      "Sun'iy intellekt murabbiyi bilan A1 dan B2 gacha interaktiv darslar, grammatik va so'zlashuv mashqlari."
+      "A1 dan B2 gacha sun'iy intellekt murabbiyi bilan interaktiv darslar va mashqlar."
   },
   {
+    icon: "💬",
     title: "Konsalting",
     description:
-      "Nemis tilini o'rganish strategiyasi, vizalar va o'qish imkoniyatlari bo'yicha shaxsiy maslahat."
+      "Vizalar, o‘qish va Germaniyada ish imkoniyatlari bo‘yicha shaxsiy maslahatlar."
   }
 ];
 
+// 📘 Kurs darajalari (A1–B2)
 export const courseLevels = [
   {
     level: "A1",
-    focus: "Boshlang'ich muloqot va kundalik vaziyatlar",
+    focus: "Boshlang‘ich muloqot va kundalik vaziyatlar",
     intensity: "6 hafta / 3 soat"
   },
   {
     level: "A2",
-    focus: "Amaliy til ko'nikmalari va so'z boyligini kengaytirish",
+    focus: "Amaliy til ko‘nikmalari va so‘z boyligini kengaytirish",
     intensity: "8 hafta / 4 soat"
   },
   {
     level: "B1",
-    focus: "TestDaF va Goethe uchun tayyorgarlik",
+    focus: "TestDaF va Goethe imtihoniga tayyorgarlik",
     intensity: "10 hafta / 5 soat"
   },
   {
@@ -39,44 +46,46 @@ export const courseLevels = [
   }
 ];
 
+// 🗺 Yo‘l xaritasi (Roadmap)
 export const roadmapSteps = [
   {
     title: "Diagnostika",
-    text: "AI quick-test orqali darajangizni aniqlang va kuchli/zaif tomonlarni bilib oling."
+    text: "AI quick-test orqali darajangizni aniqlang va kuchli/zaif tomonlaringizni biling."
   },
   {
     title: "Maqsad",
-    text: "Nemis tilida erishmoqchi bo'lgan natijani belgilang: o'qish, ish yoki ko'chib o'tish."
+    text: "O‘rganish maqsadingizni tanlang: o‘qish, ish yoki immigratsiya."
   },
   {
     title: "Reja",
-    text: "AI siz uchun shaxsiy o'quv yo'lini, jadval va resurslarni taklif qiladi."
+    text: "AI siz uchun shaxsiy yo‘l xaritasi, jadval va resurslarni yaratadi."
   },
   {
     title: "Amal",
-    text: "Interaktiv darslar, speaking seanslar va avtomatik baholash bilan mashq qiling."
+    text: "Interaktiv darslar, speaking mashg‘ulotlari va avtomatik baholash tizimi bilan o‘rganing."
   },
   {
     title: "Sertifikat",
-    text: "Natijangizni QR kod orqali tasdiqlang va rasmiy hamkorlarimizga yuboring."
+    text: "QR kod orqali tasdiqlanadigan natijali sertifikat oling."
   }
 ];
 
+// 💳 Obuna tariflari
 export const pricingPlans = [
   {
     name: "Starter",
-    price: "199 000 so'm / oy",
+    price: "199 000 so‘m / oy",
     description: "AI quick-test va haftalik progress report",
     features: [
       "Cheklanmagan AI testlar",
-      "O'zlashtirish bo'yicha avtomatik hisobot",
+      "O‘zlashtirish bo‘yicha avtomatik hisobot",
       "Telegram ogohlantirishlari"
     ]
   },
   {
     name: "Standard",
-    price: "399 000 so'm / oy",
-    description: "To'liq kurslar va AI murabbiy bilan darslar",
+    price: "399 000 so‘m / oy",
+    description: "To‘liq kurslar va AI murabbiy bilan darslar",
     features: [
       "A1–B2 video + AI mashqlar",
       "Speaking analiz va transkript",
@@ -86,7 +95,7 @@ export const pricingPlans = [
   },
   {
     name: "Premium",
-    price: "699 000 so'm / oy",
+    price: "699 000 so‘m / oy",
     description: "Konsalting, vizaga tayyorgarlik va sertifikat",
     features: [
       "1:1 mentorlik seanslari",
@@ -96,46 +105,47 @@ export const pricingPlans = [
   }
 ];
 
+// ❓ Ko‘p so‘raladigan savollar (FAQ)
 export const faqs = [
   {
     question: "GermanAI nima va qanday ishlaydi?",
     answer:
-      "GermanAI – sun'iy intellekt asosidagi ta'lim platformasi. U sizning darajangizni aniqlab, shaxsiylashtirilgan kurslar va mashqlar taklif etadi."
+      "GermanAI – AI asosidagi ta’lim platformasi. U sizning darajangizni aniqlab, shaxsiylashtirilgan kurslar, testlar va mashqlar taklif etadi."
   },
   {
     question: "Platformadan foydalanish uchun qanday qurilma kerak?",
-    answer: "Har qanday zamonaviy brauzerli telefon, planshet yoki kompyuter yetarli."
+    answer: "Zamonaviy brauzerli har qanday telefon, planshet yoki kompyuter yetarli."
   },
   {
-    question: "AI test natijalarimni qayerda ko'raman?",
-    answer: "Barcha natijalar shaxsiy kabinetingizda saqlanadi va PDF holida yuklab olish mumkin."
+    question: "AI test natijalarimni qayerda ko‘raman?",
+    answer: "Natijalar shaxsiy kabinetingizda saqlanadi va PDF holida yuklab olish mumkin."
   },
   {
     question: "Kurslarga qanday yozilaman?",
-    answer: "app.germanai.uz orqali profil yarating, sizga mos rejani tanlang va to'lovni amalga oshiring."
+    answer: "app.germanai.uz orqali profil yarating, reja tanlang va to‘lovni amalga oshiring."
   },
   {
-    question: "To'lov usullari qanday?",
-    answer: "Uzcard, Humo, Visa, MasterCard hamda Click/Payme tizimlari orqali to'lash mumkin."
+    question: "To‘lov usullari qanday?",
+    answer: "Uzcard, Humo, Visa, MasterCard hamda Click/Payme orqali to‘lash mumkin."
   },
   {
-    question: "Speaking mashg'ulotlari qanday o'tkaziladi?",
-    answer: "AI speaking buddy bilan 24/7 mashq qiling, haftada bir marta mentor bilan jonli sessiya o'tkaziladi."
+    question: "Speaking mashg‘ulotlari qanday o‘tkaziladi?",
+    answer: "AI speaking buddy bilan 24/7 mashq, mentor bilan haftalik jonli sessiya."
   },
   {
     question: "Sertifikatni qayerda tan olishadi?",
-    answer: "Hamkor universitetlar va til markazlari bilan kelishilgan QR tasdiqli sertifikat beriladi."
+    answer: "Hamkor universitetlar va til markazlari QR tasdiqli sertifikatni tan oladi."
   },
   {
-    question: "O'qituvchilar qayerdan?",
-    answer: "Nemis va o'zbek mutaxassislari, Goethe sertifikatiga ega trenerlar bilan ishlaymiz."
+    question: "O‘qituvchilar qayerdan?",
+    answer: "Nemis va o‘zbek mutaxassislari – Goethe sertifikatiga ega trenerlar bilan ishlaymiz."
   },
   {
     question: "Platformadan oflayn foydalanish mumkinmi?",
-    answer: "Mobil ilovamiz orqal oflayn rejimda darslarni yuklab olish ustida ishlayapmiz."
+    answer: "Mobil ilova orqalik darslarni yuklab olib oflayn ko‘rish funksiyasi yo‘lga qo‘yilmoqda."
   },
   {
-    question: "Qo'llab-quvvatlashga qanday murojaat qilaman?",
-    answer: "support@germanai.uz yoki @germanai_support telegram botiga yozing."
+    question: "Qo‘llab-quvvatlashga qanday murojaat qilaman?",
+    answer: "support@germanai.uz yoki @germanai_support Telegram orqali."
   }
 ];

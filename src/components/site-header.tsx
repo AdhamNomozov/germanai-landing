@@ -1,71 +1,93 @@
-'use client';
-
-import { useState } from "react";
 import Link from "next/link";
-import { ButtonLink } from "@/components/button-link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 const navItems = [
   { label: "Yo'nalishlar", href: "#directions" },
   { label: "Kurslar", href: "#courses" },
   { label: "Narxlar", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
-  { label: "Bog'lanish", href: "#contact" }
+  { label: "Bog'lanish", href: "#contact" },
 ];
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
-      <div className="section-container flex items-center justify-between py-4">
-        <Link href="#hero" className="text-lg font-bold text-brand-yellow">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between">
+        {/* Brand */}
+        <Link href="/" className="flex items-center gap-2 font-bold">
+          <span
+            aria-hidden
+            className="inline-block h-2.5 w-2.5 rounded-full bg-primary"
+          />
           GermanAI
         </Link>
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-sm text-brand-white lg:hidden"
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className="sr-only">Menu</span>
-          ☰
-        </button>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-gray-200 lg:flex">
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="hover:text-brand-yellow focus-visible:text-brand-yellow focus-visible:outline-none"
+              className="text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
             </Link>
           ))}
         </nav>
-        <div className="hidden lg:block">
-          <ButtonLink href="https://exam.germanai.uz/quick-test" variant="primary">
-            AI Quick Test
-          </ButtonLink>
+
+        <div className="flex items-center gap-4">
+          {/* Desktop CTA */}
+          <div className="hidden md:block">
+            <Button asChild>
+              <Link href="https://exam.germanai.uz/quick-test">
+                AI Quick Test
+              </Link>
+            </Button>
+          </div>
+
+          {/* Mobile Nav Trigger */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Menyuni ochish</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <nav className="grid gap-6 text-lg font-medium">
+                  <Link
+                    href="/"
+                    className="flex items-center gap-2 font-bold mb-4"
+                  >
+                     <span
+                        aria-hidden
+                        className="inline-block h-2.5 w-2.5 rounded-full bg-primary"
+                      />
+                    GermanAI
+                  </Link>
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                   <Button asChild className="mt-4">
+                      <Link href="https://exam.germanai.uz/quick-test">
+                        AI Quick Test
+                      </Link>
+                    </Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
-      {open ? (
-        <div className="section-container pb-4 lg:hidden">
-          <nav className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-gray-200">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-full px-3 py-2 hover:bg-brand-yellow/10 hover:text-brand-yellow"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <ButtonLink href="https://exam.germanai.uz/quick-test" className="w-full">
-              AI Quick Test
-            </ButtonLink>
-          </nav>
-        </div>
-      ) : null}
     </header>
   );
 }
