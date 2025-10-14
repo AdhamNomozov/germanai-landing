@@ -10,14 +10,14 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { pricingPlans } from "@/lib/data";
-import { Check } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="container py-20 md:py-28">
+    <section id="pricing" className="container py-16 md:py-20">
       {/* Section Heading */}
-      <div className="mx-auto mb-12 max-w-2xl text-center">
+      <div className="mx-auto mb-16 max-w-2xl text-center">
         <p className="font-semibold uppercase text-primary">Narxlar</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
           Mos obuna rejasini tanlang
@@ -28,16 +28,22 @@ export function PricingSection() {
       </div>
 
       {/* Pricing Cards Grid */}
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className="grid items-start gap-8 lg:grid-cols-3">
         {pricingPlans.map((plan) => (
           <Card
             key={plan.name}
             className={cn(
-              "flex flex-col",
-              plan.recommended && "border-primary ring-2 ring-primary"
+              "relative flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
+              plan.recommended && "border-2 border-primary shadow-xl -translate-y-2"
             )}
           >
-            <CardHeader>
+            {plan.recommended && (
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground">
+                Eng ommabop
+              </div>
+            )}
+
+            <CardHeader className="pt-8">
               <CardTitle>{plan.name}</CardTitle>
               <CardDescription>{plan.description}</CardDescription>
               <div>
@@ -47,9 +53,9 @@ export function PricingSection() {
             </CardHeader>
 
             <CardContent className="flex-grow">
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3">
+                  <li key={i} className="flex items-start gap-3">
                     <Check className="h-5 w-5 flex-none text-primary" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
@@ -61,6 +67,7 @@ export function PricingSection() {
               <Button
                 asChild
                 className="w-full"
+                size={plan.recommended ? "lg" : "default"}
                 variant={plan.recommended ? "default" : "outline"}
               >
                 <Link href="https://app.germanai.uz">Rejani tanlash</Link>

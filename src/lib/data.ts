@@ -1,25 +1,24 @@
 // src/lib/data.ts
 
 // 💡 Asosiy yo'nalishlar (3 ta blok)
+// src/lib/data.ts ichida
+
 export const directions = [
   {
     icon: "🧠",
-    title: "AI Mock Exam",
-    description:
-      "Nemis tilidan onlayn sinov – real imtihon formatida adaptiv savollar va AI tahlil."
+    title: "AI Mock Exam", // <-- YANGI QATOR
+    description: "Nemis tilidan onlayn sinov — real imtihon formatida adaptiv savollar va AI tahlili.",
   },
   {
     icon: "🎯",
-    title: "AI Kurslar",
-    description:
-      "A1 dan B2 gacha sun'iy intellekt murabbiyi bilan interaktiv darslar va mashqlar."
+    title: "AI Kurslar", // <-- YANGI QATOR
+    description: "A1 dan B2 gacha sun’iy intellekt murabbiyi bilan interaktiv darslar va mashqlar.",
   },
   {
     icon: "💬",
-    title: "Konsalting",
-    description:
-      "Vizalar, o‘qish va Germaniyada ish imkoniyatlari bo‘yicha shaxsiy maslahatlar."
-  }
+    title: "Konsalting", // <-- YANGI QATOR
+    description: "Vizalar, o‘qish va Germaniyada ish imkoniyatlari bo‘yicha shaxsiy maslahatlar.",
+  },
 ];
 
 // 📘 Kurs darajalari (A1–B2)

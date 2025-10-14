@@ -13,7 +13,7 @@ import { courseLevels } from "@/lib/data";
 
 export function CoursesSection() {
   return (
-    <section id="courses" className="container py-20 md:py-28">
+    <section id="courses" className="container py-16 md:py-20">
       {/* Section Heading */}
       <div className="mx-auto mb-12 max-w-2xl text-center">
         <p className="font-semibold uppercase text-primary">Kurslar</p>
@@ -25,16 +25,16 @@ export function CoursesSection() {
         </p>
       </div>
 
-      {/* Cards Grid */}
-      <div className="mt-12 grid gap-8 md:grid-cols-2">
+      {/* Cards Grid (4 ustunli qilingan) */}
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {courseLevels.map((course) => (
-          <Card key={course.level} className="flex flex-col">
+          <Card key={course.level} className="flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
             <CardHeader>
               <p className="font-semibold uppercase text-primary">{course.level}</p>
-              <CardTitle>{course.focus}</CardTitle>
+              <CardTitle className="text-xl">{course.focus}</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow">
-              <CardDescription>{course.intensity}</CardDescription>
+              <CardDescription className="text-sm">{course.intensity}</CardDescription>
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full">
