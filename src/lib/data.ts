@@ -1,3 +1,11 @@
+export type PlanProps = {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  highlighted?: boolean;
+};
+
 // src/lib/data.ts
 
 // 💡 Asosiy yo'nalishlar (3 ta blok)
@@ -70,7 +78,7 @@ export const roadmapSteps = [
 ];
 
 // 💳 Obuna tariflari
-export const pricingPlans = [
+export const pricingPlans: PlanProps[] = [
   {
     name: "Starter",
     price: "199 000 so‘m / oy",
