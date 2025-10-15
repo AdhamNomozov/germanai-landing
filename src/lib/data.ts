@@ -1,8 +1,6 @@
 // src/lib/data.ts
 
-const isHighlighted = (plan.highlighted ?? plan.recommended) ?? false;
-
-// Tarif rejalari uchun professional "qoidalar to'plami" (TypeScript Type) yaratildi va to'g'rilandi.
+// Tarif rejalari uchun professional "qoidalar to'plami" (TypeScript Type)
 export type PlanProps = {
   name: string;
   price: string;
@@ -10,7 +8,7 @@ export type PlanProps = {
   description: string;
   features: string[];
   highlighted?: boolean;
-  recommended?: boolean; // backward-compat
+  recommended?: boolean; // backward-compat (eski kodni qo'llab-quvvatlash)
 };
 
 // 💡 Asosiy yo'nalishlar (3 ta blok)
@@ -18,17 +16,20 @@ export const directions = [
   {
     icon: "🧠",
     title: "AI Mock Exam",
-    description: "Nemis tilidan onlayn sinov — real imtihon formatida adaptiv savollar va AI tahlili.",
+    description:
+      "Nemis tilidan onlayn sinov — real imtihon formatida adaptiv savollar va AI tahlili.",
   },
   {
     icon: "🎯",
     title: "AI Kurslar",
-    description: "A1 dan B2 gacha sun’iy intellekt murabbiyi bilan interaktiv darslar va mashqlar.",
+    description:
+      "A1 dan B2 gacha sun’iy intellekt murabbiyi bilan interaktiv darslar va mashqlar.",
   },
   {
     icon: "💬",
     title: "Konsalting",
-    description: "Vizalar, o‘qish va Germaniyada ish imkoniyatlari bo‘yicha shaxsiy maslahatlar.",
+    description:
+      "Vizalar, o‘qish va Germaniyada ish imkoniyatlari bo‘yicha shaxsiy maslahatlar.",
   },
 ];
 
@@ -37,50 +38,50 @@ export const courseLevels = [
   {
     level: "A1",
     focus: "Boshlang‘ich muloqot va kundalik vaziyatlar",
-    intensity: "6 hafta / 3 soat"
+    intensity: "6 hafta / 3 soat",
   },
   {
     level: "A2",
     focus: "Amaliy til ko‘nikmalari va so‘z boyligini kengaytirish",
-    intensity: "8 hafta / 4 soat"
+    intensity: "8 hafta / 4 soat",
   },
   {
     level: "B1",
     focus: "TestDaF va Goethe imtihoniga tayyorgarlik",
-    intensity: "10 hafta / 5 soat"
+    intensity: "10 hafta / 5 soat",
   },
   {
     level: "B2",
     focus: "Akademik yozuv va professional muloqot",
-    intensity: "12 hafta / 5 soat"
-  }
+    intensity: "12 hafta / 5 soat",
+  },
 ];
 
 // 🗺 Yo‘l xaritasi (Roadmap)
 export const roadmapSteps = [
   {
     title: "Diagnostika",
-    text: "AI quick-test orqali darajangizni aniqlang va kuchli/zaif tomonlaringizni biling."
+    text: "AI quick-test orqali darajangizni aniqlang va kuchli/zaif tomonlaringizni biling.",
   },
   {
     title: "Maqsad",
-    text: "O‘rganish maqsadingizni tanlang: o‘qish, ish yoki immigratsiya."
+    text: "O‘rganish maqsadingizni tanlang: o‘qish, ish yoki immigratsiya.",
   },
   {
     title: "Reja",
-    text: "AI siz uchun shaxsiy yo‘l xaritasi, jadval va resurslarni yaratadi."
+    text: "AI siz uchun shaxsiy yo‘l xaritasi, jadval va resurslarni yaratadi.",
   },
   {
     title: "Amal",
-    text: "Interaktiv darslar, speaking mashg‘ulotlari va avtomatik baholash tizimi bilan o‘rganing."
+    text: "Interaktiv darslar, speaking mashg‘ulotlari va avtomatik baholash tizimi bilan o‘rganing.",
   },
   {
     title: "Sertifikat",
-    text: "QR kod orqali tasdiqlanadigan natijali sertifikat oling."
-  }
+    text: "QR kod orqali tasdiqlanadigan natijali sertifikat oling.",
+  },
 ];
 
-// 💳 Obuna tariflari (Ma'lumotlar strukturasi professional holatga keltirildi)
+// 💳 Obuna tariflari (ma'lumotlar strukturası)
 export const pricingPlans: PlanProps[] = [
   {
     name: "Starter",
@@ -90,8 +91,8 @@ export const pricingPlans: PlanProps[] = [
     features: [
       "Cheklanmagan AI testlar",
       "O‘zlashtirish bo‘yicha avtomatik hisobot",
-      "Telegram ogohlantirishlari"
-    ]
+      "Telegram ogohlantirishlari",
+    ],
   },
   {
     name: "Standard",
@@ -101,9 +102,9 @@ export const pricingPlans: PlanProps[] = [
     features: [
       "A1–B2 video + AI mashqlar",
       "Speaking analiz va transkript",
-      "Oylik progress konsultatsiyasi"
+      "Oylik progress konsultatsiyasi",
     ],
-    highlighted: true
+    highlighted: true,
   },
   {
     name: "Premium",
@@ -113,9 +114,9 @@ export const pricingPlans: PlanProps[] = [
     features: [
       "1:1 mentorlik seanslari",
       "Nemis universitetlari uchun paket",
-      "Rasmiy hamkor sertifikati"
-    ]
-  }
+      "Rasmiy hamkor sertifikati",
+    ],
+  },
 ];
 
 // ❓ Ko‘p so‘raladigan savollar (FAQ)
@@ -123,42 +124,50 @@ export const faqs = [
   {
     question: "GermanAI nima va qanday ishlaydi?",
     answer:
-      "GermanAI – AI asosidagi ta’lim platformasi. U sizning darajangizni aniqlab, shaxsiylashtirilgan kurslar, testlar va mashqlar taklif etadi."
+      "GermanAI – AI asosidagi ta’lim platformasi. U sizning darajangizni aniqlab, shaxsiylashtirilgan kurslar, testlar va mashqlar taklif etadi.",
   },
   {
     question: "Platformadan foydalanish uchun qanday qurilma kerak?",
-    answer: "Zamonaviy brauzerli har qanday telefon, planshet yoki kompyuter yetarli."
+    answer:
+      "Zamonaviy brauzerli har qanday telefon, planshet yoki kompyuter yetarli.",
   },
   {
     question: "AI test natijalarimni qayerda ko‘raman?",
-    answer: "Natijalar shaxsiy kabinetingizda saqlanadi va PDF holida yuklab olish mumkin."
+    answer:
+      "Natijalar shaxsiy kabinetingizda saqlanadi va PDF holida yuklab olish mumkin.",
   },
   {
     question: "Kurslarga qanday yozilaman?",
-    answer: "app.germanai.uz orqali profil yarating, reja tanlang va to‘lovni amalga oshiring."
+    answer:
+      "app.germanai.uz orqali profil yarating, reja tanlang va to‘lovni amalga oshiring.",
   },
   {
     question: "To‘lov usullari qanday?",
-    answer: "Uzcard, Humo, Visa, MasterCard hamda Click/Payme orqali to‘lash mumkin."
+    answer:
+      "Uzcard, Humo, Visa, MasterCard hamda Click/Payme orqali to‘lash mumkin.",
   },
   {
     question: "Speaking mashg‘ulotlari qanday o‘tkaziladi?",
-    answer: "AI speaking buddy bilan 24/7 mashq, mentor bilan haftalik jonli sessiya."
+    answer:
+      "AI speaking buddy bilan 24/7 mashq, mentor bilan haftalik jonli sessiya.",
   },
   {
     question: "Sertifikatni qayerda tan olishadi?",
-    answer: "Hamkor universitetlar va til markazlari QR tasdiqli sertifikatni tan oladi."
+    answer:
+      "Hamkor universitetlar va til markazlari QR tasdiqli sertifikatni tan oladi.",
   },
   {
     question: "O‘qituvchilar qayerdan?",
-    answer: "Nemis va o‘zbek mutaxassislari – Goethe sertifikatiga ega trenerlar bilan ishlaymiz."
+    answer:
+      "Nemis va o‘zbek mutaxassislari – Goethe sertifikatiga ega trenerlar bilan ishlaymiz.",
   },
   {
     question: "Platformadan oflayn foydalanish mumkinmi?",
-    answer: "Mobil ilova orqalik darslarni yuklab olib oflayn ko‘rish funksiyasi yo‘lga qo‘yilmoqda."
+    answer:
+      "Mobil ilova orqalik darslarni yuklab olib oflayn ko‘rish funksiyasi yo‘lga qo‘yilmoqda.",
   },
   {
     question: "Qo‘llab-quvvatlashga qanday murojaat qilaman?",
-    answer: "support@germanai.uz yoki @germanai_support Telegram orqali."
-  }
+    answer: "support@germanai.uz yoki @germanai_support Telegram orqali.",
+  },
 ];
