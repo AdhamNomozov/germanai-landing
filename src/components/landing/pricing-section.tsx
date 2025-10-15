@@ -1,4 +1,6 @@
 // src/components/landing/pricing-section.tsx
+"use client";
+
 import Link from "next/link";
 import {
   Card,
@@ -10,10 +12,24 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { pricingPlans } from "@/lib/data";
-import { Check, Star } from "lucide-react";
+import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+/** pricingPlans elementlari uchun backward-compat tip (recommended/highlighted) */
+type AnyPlan = typeof pricingPlans extends Array<infer T> ? T : never;
+type PlanCompat = AnyPlan & {
+  name: string;
+  price: string;
+  pricePeriod?: string;
+  description: string;
+  features: string[];
+  highlighted?: boolean;
+  recommended?: boolean; // eski nomlashni ham qollab-quvvatlaymiz
+};
+
 export function PricingSection() {
+  const plans = pricingPlans as unknown as PlanCompat[];
+
   return (
     <section id="pricing" className="container py-16 md:py-20">
       {/* Section Heading */}
@@ -29,52 +45,58 @@ export function PricingSection() {
 
       {/* Pricing Cards Grid */}
       <div className="grid items-start gap-8 lg:grid-cols-3">
-        {pricingPlans.map((plan) => (
-          <Card
-            key={plan.name}
-            className={cn(
-              "relative flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
-              plan.highlighted && "border-2 border-primary shadow-xl -translate-y-2"
-            )}
-          >
-            {plan.highlighted && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground">
-                Eng ommabop
-              </div>
-            )}
+        {plans.map((plan) => {
+          const isHighlighted = (plan.highlighted ?? plan.recommended) ?? false;
 
-            <CardHeader className="pt-8">
-              <CardTitle>{plan.name}</CardTitle>
-              <CardDescription>{plan.description}</CardDescription>
-              <div>
-                <span className="text-4xl font-bold">{plan.price}</span>
-                <span className="text-muted-foreground"> {plan.pricePeriod}</span>
-              </div>
-            </CardHeader>
+          return (
+            <Card
+              key={plan.name}
+              className={cn(
+                "relative flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
+                isHighlighted && "border-2 border-primary shadow-xl -translate-y-2"
+              )}
+            >
+              {isHighlighted && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground">
+                  Eng ommabop
+                </div>
+              )}
 
-            <CardContent className="flex-grow">
-              <ul className="space-y-4">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="h-5 w-5 flex-none text-primary" />
-                    <span className="text-muted-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
+              <CardHeader className="pt-8">
+                <CardTitle>{plan.name}</CardTitle>
+                <CardDescription>{plan.description}</CardDescription>
+                <div>
+                  <span className="text-4xl font-bold">{plan.price}</span>
+                  {plan.pricePeriod && (
+                    <span className="text-muted-foreground"> {plan.pricePeriod}</span>
+                  )}
+                </div>
+              </CardHeader>
 
-            <CardFooter>
-              <Button
-                asChild
-                className="w-full"
-                size={plan.recommended ? "lg" : "default"}
-                variant={plan.recommended ? "default" : "outline"}
-              >
-                <Link href="https://app.germanai.uz">Rejani tanlash</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+              <CardContent className="flex-grow">
+                <ul className="space-y-4">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <Check className="h-5 w-5 flex-none text-primary" />
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+
+              <CardFooter>
+                <Button
+                  asChild
+                  className="w-full"
+                  size={isHighlighted ? "lg" : "default"}
+                  variant={isHighlighted ? "default" : "outline"}
+                >
+                  <Link href="https://app.germanai.uz">Rejani tanlash</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          );
+        })}
       </div>
     </section>
   );
