@@ -4,10 +4,11 @@
 export type PlanProps = {
   name: string;
   price: string;
-  pricePeriod: string; // MUAMMONING YECHIMI: SHU QATOR QO'SHILDI
+  pricePeriod?: string;
   description: string;
   features: string[];
   highlighted?: boolean;
+  recommended?: boolean; // backward-compat
 };
 
 // 💡 Asosiy yo'nalishlar (3 ta blok)
