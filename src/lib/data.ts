@@ -1,30 +1,30 @@
+// src/lib/data.ts
+
+// Tarif rejalari uchun professional "qoidalar to'plami" (TypeScript Type) yaratildi va to'g'rilandi.
 export type PlanProps = {
   name: string;
   price: string;
+  pricePeriod: string; // MUAMMONING YECHIMI: SHU QATOR QO'SHILDI
   description: string;
   features: string[];
   highlighted?: boolean;
 };
 
-// src/lib/data.ts
-
 // 💡 Asosiy yo'nalishlar (3 ta blok)
-// src/lib/data.ts ichida
-
 export const directions = [
   {
     icon: "🧠",
-    title: "AI Mock Exam", // <-- YANGI QATOR
+    title: "AI Mock Exam",
     description: "Nemis tilidan onlayn sinov — real imtihon formatida adaptiv savollar va AI tahlili.",
   },
   {
     icon: "🎯",
-    title: "AI Kurslar", // <-- YANGI QATOR
+    title: "AI Kurslar",
     description: "A1 dan B2 gacha sun’iy intellekt murabbiyi bilan interaktiv darslar va mashqlar.",
   },
   {
     icon: "💬",
-    title: "Konsalting", // <-- YANGI QATOR
+    title: "Konsalting",
     description: "Vizalar, o‘qish va Germaniyada ish imkoniyatlari bo‘yicha shaxsiy maslahatlar.",
   },
 ];
@@ -77,11 +77,12 @@ export const roadmapSteps = [
   }
 ];
 
-// 💳 Obuna tariflari
+// 💳 Obuna tariflari (Ma'lumotlar strukturasi professional holatga keltirildi)
 export const pricingPlans: PlanProps[] = [
   {
     name: "Starter",
-    price: "199 000 so‘m / oy",
+    price: "199 000 so‘m",
+    pricePeriod: "/ oy",
     description: "AI quick-test va haftalik progress report",
     features: [
       "Cheklanmagan AI testlar",
@@ -91,7 +92,8 @@ export const pricingPlans: PlanProps[] = [
   },
   {
     name: "Standard",
-    price: "399 000 so‘m / oy",
+    price: "399 000 so‘m",
+    pricePeriod: "/ oy",
     description: "To‘liq kurslar va AI murabbiy bilan darslar",
     features: [
       "A1–B2 video + AI mashqlar",
@@ -102,7 +104,8 @@ export const pricingPlans: PlanProps[] = [
   },
   {
     name: "Premium",
-    price: "699 000 so‘m / oy",
+    price: "699 000 so‘m",
+    pricePeriod: "/ oy",
     description: "Konsalting, vizaga tayyorgarlik va sertifikat",
     features: [
       "1:1 mentorlik seanslari",
