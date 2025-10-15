@@ -34,10 +34,10 @@ export function PricingSection() {
             key={plan.name}
             className={cn(
               "relative flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
-              plan.recommended && "border-2 border-primary shadow-xl -translate-y-2"
+              plan.highlighted && "border-2 border-primary shadow-xl -translate-y-2"
             )}
           >
-            {plan.recommended && (
+            {plan.highlighted && (
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground">
                 Eng ommabop
               </div>
