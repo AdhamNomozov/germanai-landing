@@ -1,5 +1,7 @@
 // src/lib/data.ts
 
+const isHighlighted = (plan.highlighted ?? plan.recommended) ?? false;
+
 // Tarif rejalari uchun professional "qoidalar to'plami" (TypeScript Type) yaratildi va to'g'rilandi.
 export type PlanProps = {
   name: string;
