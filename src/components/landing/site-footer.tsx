@@ -25,7 +25,7 @@ const TelegramIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const socialLinks = [
   { name: "Telegram", href: "https://t.me/germanai", icon: TelegramIcon },
   { name: "Instagram", href: "https://www.instagram.com/germanai", icon: Instagram },
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/germanai", icon: Linkedin },
+  { name: "Facebook", href: "https://www.facebook.com/company/germanai", icon: Facebook },
 ];
 
 export function SiteFooter() {
