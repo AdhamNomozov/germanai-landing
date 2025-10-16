@@ -40,8 +40,8 @@ export function HeroSection() {
             tayyorlaning
           </h1>
           <p className="max-w-xl text-lg text-muted-foreground drop-shadow-sm">
-            Adaptiv testlar, shaxsiylashtirilgan kurslar va yengil konsalting — barchasi
-            bitta platformada. Minimal dizayn, maksimal natija.
+            Nemis tili Mock imtixonlar, shaxsiylashtirilgan kurslar va konsalting xizmatlari — barchasi
+            bitta platformada
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button size="lg" asChild className="transition-transform duration-300 hover:-translate-y-1">
