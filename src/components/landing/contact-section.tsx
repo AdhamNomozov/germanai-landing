@@ -10,17 +10,17 @@ import { Phone, Mail, MapPin } from "lucide-react";
 const contactDetails = [
   {
     icon: Phone,
-    text: "+998 71 200 00 00",
-    href: "tel:+998712000000",
+    text: "+998 99 746 22 00",
+    href: "tel:+998997462200",
   },
   {
     icon: Mail,
-    text: "hello@germanai.uz",
-    href: "mailto:hello@germanai.uz",
+    text: "admin@germanai.uz",
+    href: "mailto:admin@germanai.uz",
   },
   {
     icon: MapPin,
-    text: "Toshkent shahri, IT Park",
+    text: "Termiz shahri",
   },
 ];
 
