@@ -35,9 +35,9 @@ export function HeroSection() {
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl drop-shadow-sm">
             Nemis tili imtihonlariga{" "}
             <span className="bg-gradient-to-r from-primary via-yellow-300 to-primary bg-clip-text text-transparent">
-              AI bilan tayyorgarlik
+              AI bilan
             </span>{" "}
-            qiling
+            tayyorlaning
           </h1>
           <p className="max-w-xl text-lg text-muted-foreground drop-shadow-sm">
             Adaptiv testlar, shaxsiylashtirilgan kurslar va yengil konsalting — barchasi
